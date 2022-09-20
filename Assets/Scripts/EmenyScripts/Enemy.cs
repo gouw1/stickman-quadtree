@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IHasID, IHasRect
 {
     public Animator Anim;
+    public Rectangle rect { get; }
+	public int ID { get; }
 
     [SerializeField]
     Transform player;

@@ -53,7 +53,7 @@ class QuadTree<T> where T : IHasRect, IHasID
 	public bool Insert(T node) 
 	{
 		if(node.rect.radius == 0)
-			Debug.LogError("Radius of the inserted boundry cannot be zero.");
+			Debug.LogError("Radius batas yang disisipkan tidak boleh nol.");
 		
 		//Checking if the position is in the boundries of the node.
 		if(!boundry.Contains(node.rect.x, node.rect.y)) return false;
@@ -85,13 +85,13 @@ class QuadTree<T> where T : IHasRect, IHasID
 				if(!northEast.Insert(nodes[i]))			
 				if(!northWest.Insert(nodes[i]))		
 				if(!southEast.Insert(nodes[i]))
-				if(!southWest.Insert(nodes[i])) { Debug.LogError("It should not reach here"); }
+				if(!southWest.Insert(nodes[i])) { Debug.LogError("Seharusnya tidak sampai di sini"); }
 			}
 
 			if(!northEast.Insert(node))			
 			if(!northWest.Insert(node))		
 			if(!southEast.Insert(node))
-			if(!southWest.Insert(node)) { Debug.LogError("It should not reach here"); }
+			if(!southWest.Insert(node)) { Debug.LogError("Seharusnya tidak sampai di sini"); }
 			return true;
 		}
 		return false;

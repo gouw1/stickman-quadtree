@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public partial class Bullet : MonoBehaviour {
+public class Bullet : MonoBehaviour, IHasID, IHasRect  {
 
 	public float speed = 20f;
 	public int damage = 40;
 	public Rigidbody2D rb;
 	//public GameObject impactEffect; //Play an effect on inpact
+	public Rectangle rect { get; }
+	public int ID { get; }
 
 	// Use this for initialization
 	void Start () {
